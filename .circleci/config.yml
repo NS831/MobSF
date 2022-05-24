@@ -5,22 +5,31 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+  mobsf:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub. 
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+      - image: opensecurity/mobile-security-framework-mobsf
+    # Add steps to the job. See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
-      - checkout
+    #  - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "Working?"
+          command: "echo Works up to this point"
+      - run:
+          name: "Create env var file"
+          command: "MOBSF_API_KEY=$MOBSF_API_KEY" > env.list 
+      - run:
+          name: "Run MobSF"
+          command: docker run -it --env-file ./env.list -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest 
+
+#upload the apk. scan the apk. download the pdf. 
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  mobsf-workflow:
     jobs:
-      - say-hello
+      - mobsf
+
