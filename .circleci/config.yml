@@ -21,8 +21,7 @@ jobs:
     #  - checkout
       - run:
           name: "working?"
-          command: 
-            "echo Works up to this point"
+          command: #"echo Works up to this point"
             docker compose
                     
       - run:
