@@ -1,12 +1,12 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
-version: 2.1
+version: 2
 
 orbs:
     docker: circleci/docker@2.1.1
     
-services:
-  - docker
+#services:
+#  - docker
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -22,8 +22,8 @@ jobs:
       - run:
           name: "working?"
           command: #"echo Works up to this point"
-            #docker compose
-            docker pull opensecurity/mobile-security-framework-mobsf
+            docker compose
+            #docker pull opensecurity/mobile-security-framework-mobsf
                     
       - run:
           name: "Create env var file"
@@ -32,7 +32,7 @@ jobs:
           name: "Run MobSF"
           command: docker run -it --env-file ./env.list -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest 
 
- #upload the apk. scan the apk. download the pdf. 
+ #to add: upload the apk. scan the apk. download the pdf. 
 
 
 # Invoke jobs via workflows
