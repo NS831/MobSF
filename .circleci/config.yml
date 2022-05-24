@@ -22,7 +22,8 @@ jobs:
       - run:
           name: "working?"
           command: #"echo Works up to this point"
-            docker compose
+            #docker compose
+            docker pull opensecurity/mobile-security-framework-mobsf
                     
       - run:
           name: "Create env var file"
