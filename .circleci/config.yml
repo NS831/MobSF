@@ -2,8 +2,8 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-#orbs:
-#    docker: circleci/docker@2.1.1
+orbs:
+    docker: circleci/docker@2.1.1
     
 services:
   - docker
@@ -21,7 +21,10 @@ jobs:
     #  - checkout
       - run:
           name: "working?"
-          command: "echo Works up to this point"
+          command: 
+            "echo Works up to this point"
+            docker compose
+                    
       - run:
           name: "Create env var file"
           command: echo "MOBSF_API_KEY=$MOBSF_API_KEY" > env.list 
