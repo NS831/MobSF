@@ -2,8 +2,8 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-orbs:
-    docker: circleci/docker@2.1.1
+#orbs:
+#    docker: circleci/docker@2.1.1
     
 services:
   - docker
@@ -20,7 +20,7 @@ jobs:
     steps:
     #  - checkout
       - run:
-          name: "docker working?"
+          name: "working?"
           command: "echo Works up to this point"
       - run:
           name: "Create env var file"
