@@ -18,7 +18,7 @@ jobs:
           command: "echo Works up to this point"
       - run:
           name: "Create env var file"
-          command: "MOBSF_API_KEY=$MOBSF_API_KEY" > env.list 
+          command: echo "MOBSF_API_KEY=$MOBSF_API_KEY" > env.list 
       - run:
           name: "Run MobSF"
           command: docker run -it --env-file ./env.list -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest 
