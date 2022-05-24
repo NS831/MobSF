@@ -4,7 +4,10 @@ version: 2.1
 
 orbs:
     docker: circleci/docker@2.1.1
-    
+
+docker:
+  - image: docker:17.05.0-ce-git
+
 services:
   - docker
 
