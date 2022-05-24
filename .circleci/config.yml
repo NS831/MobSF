@@ -23,7 +23,7 @@ jobs:
           name: "Run MobSF"
           command: docker run -it --env-file ./env.list -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest 
 
-#upload the apk. scan the apk. download the pdf. 
+ #upload the apk. scan the apk. download the pdf. 
 
 
 # Invoke jobs via workflows
