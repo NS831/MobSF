@@ -10,7 +10,7 @@ jobs:
           command: pip install --upgrade mobsfscan
       - run:
            name: mobsfscan check
-           command: mobsfscan -h
+           command: mobsfscan -o results
 
 workflows:
   mobsf-workflow:
