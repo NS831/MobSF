@@ -11,3 +11,8 @@ jobs:
       - run:
            name: mobsfscan check
            command: mobsfscan .
+
+workflows:
+  mobsf-workflow:
+    jobs:
+      - mobsfscan
