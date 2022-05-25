@@ -11,7 +11,7 @@ jobs:
       - run:
            name: mobsfscan check
            #command: mobsfscan --json -o results --version src/
-	   command: mobsfscan src/
+           command: mobsfscan src/
 
 workflows:
   mobsf-workflow:
