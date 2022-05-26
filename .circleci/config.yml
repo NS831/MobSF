@@ -6,17 +6,20 @@ jobs:
     steps:
       - checkout
       - run:
+          name: check pwd
+          command: pwd
+      - run:
           name: Install mobsfscan
           command: pip install --upgrade mobsfscan
       - run:
            name: mobsfscan check
-           #command: mobsfscan src/
-           command: mobsfscan --json -o results src/ > /tmp/artifact-1;
-      - store_artifacts:
-           path: /tmp/artifact-1
-           destination: artifact-file
-      - store_artifacts:
-           path: /tmp/artifacts
+           command: mobsfscan src/
+           #command: mobsfscan --json -o results src/ > /tmp/artifact-1;
+      #- store_artifacts:
+       #    path: /tmp/artifact-1
+        #   destination: artifact-file
+      #- store_artifacts:
+       #    path: /tmp/artifacts
 
 
 workflows:
