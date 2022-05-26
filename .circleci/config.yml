@@ -12,7 +12,7 @@ jobs:
       - run:
            name: mobsfscan check
            #command: mobsfscan src/
-           command: mobsfscan --json src/
+           command: mobsfscan -o results src/
            #command: mobsfscan --json -o results src/ > /tmp/artifact-1;
       #- store_artifacts:
        #    path: /tmp/artifact-1
