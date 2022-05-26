@@ -5,9 +5,7 @@ jobs:
       - image: cimg/python:3.9.6
     steps:
       - checkout
-      - run:
-          name: check pwd
-          command: pwd
+      #pwd is /home/circleci/project
       - run:
           name: Install mobsfscan
           command: pip install --upgrade mobsfscan
