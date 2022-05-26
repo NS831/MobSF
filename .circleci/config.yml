@@ -15,7 +15,7 @@ jobs:
            #command: mobsfscan -o results src/ > /tmp/artifact-1;
            #command: mobsfscan --json -o results src/ > /tmp/artifact-1;
            command: |
-              echo "test artifact" > /tmp/art-1;
+              #echo "test artifact" > /tmp/art-1;
               mkdir /tmp/artifacts;
               echo "my artifact files in a dir" > /tmp/artifacts/art-2;
       - store_artifacts:
